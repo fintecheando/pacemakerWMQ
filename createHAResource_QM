@@ -14,9 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This script must be run as root
+# Argument is the queue manager name
 
-mkdir /usr/lib/ocf/resource.d/IBM
-mv MQ_HA_QM MQ_HA_QM_monitor MQ_HA_QM_start MQ_HA_QM_stop /usr/lib/ocf/resource.d/IBM
-chown root:root /usr/lib/ocf/resource.d/IBM/MQ_HA_QM
-chmod 755 /usr/lib/ocf/resource.d/IBM/MQ_HA_QM
+pcs resource create $1 ocf:IBM:MQ_HA_QM  --group wmq

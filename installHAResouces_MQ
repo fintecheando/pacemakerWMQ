@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Argument is the queue manager name
+# This script must be run as root
 
-pcs cib new $1_cfg
-pcs -c $1_cfg configure primitive $1 MQ_HA_QM
-pcs -c $1_cfg configure location prevent-$1 $1 -inf: Pacemaker
-pcs cib commit $1_cfg
+mkdir /usr/lib/ocf/resource.d/IBM
+mv MQ_HA_QM MQ_HA_QM_monitor MQ_HA_QM_start MQ_HA_QM_stop /usr/lib/ocf/resource.d/IBM
+chown -Rf root:root /usr/lib/ocf/resource.d/IBM/
+chmod -Rf 755 /usr/lib/ocf/resource.d/IBM/

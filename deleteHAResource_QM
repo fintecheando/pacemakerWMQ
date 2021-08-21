@@ -14,16 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This script must be run as root
+# Argument is the queue manager name
 
-echo 'kernel.shmmax=268435456' >> /etc/sysctl.conf
-echo 'vm.overcommit_memory=2' >> /etc/sysctl.conf
-
-sysctl -p
-
-echo '* hard nofile 10240' >> /etc/security/limits.conf
-echo '* soft nofile 10240' >> /etc/security/limits.conf
-echo 'root hard nofile 10240' >> /etc/security/limits.conf
-echo 'root soft nofile 10240' >> /etc/security/limits.conf
-
-echo 'session required pam_limits.so' >> /etc/pam.d/common-session
+pcs resource delete $1 
