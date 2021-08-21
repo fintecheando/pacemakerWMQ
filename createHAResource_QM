@@ -16,4 +16,4 @@
 
 # Argument is the queue manager name
 
-pcs resource create $1 ocf:IBM:MQ_HA_QM  --group wmq
+pcs resource create $1 ocf:IBM:MQ_HA_QM op monitor interval=30s --group wmq
