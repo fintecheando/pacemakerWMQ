@@ -17,3 +17,4 @@
 # Argument is the queue manager name
 
 pcs resource delete $1 
+pcs resource cleanup $1 
