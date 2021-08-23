@@ -49,7 +49,7 @@ do
   immediate)
     # Minimum severity of endmqm is immediate which severs connections.
     # HA cluster should not be delayed by clients
-    endmqm -s ${QM} &
+    endmqm -i ${QM} &
     ;;
 
   brutal)
