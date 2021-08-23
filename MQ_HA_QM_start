@@ -40,4 +40,4 @@ done
 # It is now safe to start the queue manager.
 # The strmqm command does not use the -x flag.
 export AMQ_INHIBIT_O_DIRECT=TRUE
-strmqm ${QM}
+strmqm -x ${QM}
