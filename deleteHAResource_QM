@@ -19,3 +19,4 @@
 pcs resource delete $1 
 pcs resource cleanup $1 
 pcs resource refresh --full
+pcs cluster sync 
