@@ -17,4 +17,3 @@
 # Argument is the queue manager name
 
 pcs resource create $1 ocf:IBM:MQ_HA_QM --group wmq
-#pcs constraint location $1 prefers nodo01.fintecheando.mx=INFINITY
